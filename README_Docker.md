@@ -1,19 +1,19 @@
-# Docker Installations
+# Docker 安装
 
-Docker installations are another avenue that allows for an easy and clean installation of the Superalgos Platform. While a little bit more technical than the packaged applications, it offers the ability to install the platform in a clean and isolated environment. 
+Docker 安装是安装 Superalgos 平台的另一种方式，它允许简单和干净的安装。虽然比打包应用程序稍微技术性一些，但它提供了在干净和隔离的环境中安装平台的能力。
 
-You can find the official walk-through for docker installations in our [Docker Guide](Docker/README.md).
+您可以在我们的 [Docker 指南](Docker/README.md)中找到 docker 安装的官方教程。
 
-## Pros and Cons of Docker Installations
+## Docker 安装的优缺点
 
-The main purpose of docker installations is for production instances.  This is because the Superalgos Platform will be installed in a nice and clean environment that can be controlled separately from the rest of your computer. This makes it a perfect candidate for users who wish to set up an instance of the platform to run dependably without interruption.
+docker 安装的主要目的是用于生产实例。这是因为 Superalgos 平台将安装在一个干净的环境中，可以与计算机的其他部分分开控制。这使它成为希望设置平台实例以可靠运行而不中断的用户的完美选择。
 
-Being aimed at production, the standard docker installations are not a good option for users looking to contribute to the ecosystem. You will not be able to create a User Profile for the Governance system, submit a review, edit and translate the docs, or contribute code. 
+由于面向生产，标准的 docker 安装对于希望为生态系统做出贡献的用户来说不是一个好选择。您将无法为治理系统创建用户配置文件、提交审查、编辑和翻译文档，或贡献代码。
 
-## Unofficial Alternative
+## 非官方替代方案
 
-Traditional docker installations are not meant to be development environments. Meaning that you cannot submit a review, edit and translate the docs, or any kind of code contribution.  That being said, there is a little-used custom docker image that will allow you to install the platform in a development-compatible configuration.  You can find the image and a walk-through for installing it [on this page managed by a contributor](https://hub.docker.com/r/martinb78/superalgos-docker-develop).
+传统的 docker 安装不是为开发环境设计的。这意味着您不能提交审查、编辑和翻译文档，或进行任何类型的代码贡献。话虽如此，有一个很少使用的自定义 docker 镜像，它允许您以兼容开发的配置安装平台。您可以在[这个由贡献者管理的页面](https://hub.docker.com/r/martinb78/superalgos-docker-develop)上找到该镜像和安装教程。
 
-This development-compatible docker installation is for special use cases. For example, using a local NAS to host the platform while still being able to add contributions. This is a nonstandard way of installing Superalgos and is only recommended for users who are comfortable using docker and dealing with potential pitfalls of installing using his method. 
+这种兼容开发的 docker 安装适用于特殊用例。例如，使用本地 NAS 托管平台，同时仍能添加贡献。这是一种非标准的 Superalgos 安装方式，只推荐给熟悉使用 docker 并能处理使用此方法安装可能出现的问题的用户。
 
-> :white_check_mark: **IMPORTANT:** Please note that the development compatible docker image is not the standard method to install Superalgos for contributing. If you are new to contributing or are not an experienced developer, it is recommended that you follow the steps for a standard Developers and Contributor's installation instead (instructions available on the main README file.
+> :white_check_mark: **重要提示：** 请注意，兼容开发的 docker 镜像不是安装 Superalgos 用于贡献的标准方法。如果您是贡献新手或不是有经验的开发者，建议您按照标准的开发者和贡献者安装步骤进行操作（说明在主 README 文件中提供）。

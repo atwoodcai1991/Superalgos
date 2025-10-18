@@ -1,16 +1,16 @@
-# Documentation export
+# 文档导出
 
-The documentation is now ready for exporting as a static website. The process will convert all the schemas into human readable documentation as '.html' pages. All necessary images, icons, fonts, stylesheets and javascript libraries are transfered to the local directory during the process.
+文档现在可以作为静态网站导出。该过程将把所有模式转换为人类可读的文档，以 '.html' 页面形式呈现。在此过程中，所有必要的图像、图标、字体、样式表和 JavaScript 库都会被传输到本地目录。
 
-## Process arguments
+## 进程参数
 
-Argument | abbreviation | default value | description 
+参数 | 缩写 | 默认值 | 描述 
 ---|---|---|--
---local-directory | -l | My-Storage/_site | this is the local directory that you want to export the static files to
---remote-directory | -r | My-Storage/_site | this is the folder that the files will live under on the remote directory. if you wanted to host it on superalgos.org/docs/index.html then you would supply `-r=docs` if you want the files to live under a root directory then you will need to pass in an empty string argument `-r=""`
---bots | -b | false | this argument determines whether to include a robots.txt file to disallow crawling. To enable crawling add the `--bots` or `-b` argument
---shtml | n/a | false | this argument determines whether to export the docs '\*.shtml' files instead of '\*.html' files
+--local-directory | -l | My-Storage/_site | 这是您想要导出静态文件到的本地目录
+--remote-directory | -r | My-Storage/_site | 这是文件将在远程目录下存在的文件夹。如果您想在 superalgos.org/docs/index.html 上托管它，那么您需要提供 `-r=docs`，如果您想让文件存在于根目录下，那么您需要传入一个空字符串参数 `-r=""`
+--bots | -b | false | 此参数决定是否包含一个 robots.txt 文件以禁止爬取。要启用爬取，添加 `--bots` 或 `-b` 参数
+--shtml | 无 | false | 此参数决定是否导出文档为 '\*.shtml' 文件而不是 '\*.html' 文件
 
-## Execution
+## 执行
 
-To export the documentation run `node export-docs` with all the necessary arguments listed above
+要导出文档，运行 `node export-docs` 并带上上面列出的所有必要参数

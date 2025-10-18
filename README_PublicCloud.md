@@ -1,16 +1,9 @@
-# Public Cloud Instructions
+# 公有云说明
 
-Hosting the the public cloud is a great option if you are looking for a highly
-scalable and reliable solution.
+如果您正在寻找高度可扩展和可靠的解决方案，在公有云上托管是一个很好的选择。
 
-While Superalgos does not officially support any public cloud providers, there
-are community projects that have been created to make it easy to deploy Superalgos
-into the cloud. This page is a list of those projects.
+虽然 Superalgos 不正式支持任何公有云提供商，但社区已经创建了一些项目，使得将 Superalgos 部署到云中变得容易。本页面是这些项目的列表。
 
 ## :small_orange_diamond: AWS
 
-[Superalgos-Iac](https://github.com/khultman/Superalgos-IaC) is a terraform project
-with the goal of making it easy to deploy Superalgos to AWS. As of Dec. 2022 this
-project is still in development and is not yet ready for production use; however,
-it provides a documented design that could be used to deploy Superalgos to AWS.
-
+[Superalgos-Iac](https://github.com/khultman/Superalgos-IaC) 是一个 terraform 项目，目标是使 Superalgos 易于部署到 AWS。截至 2022 年 12 月，该项目仍在开发中，尚未准备好用于生产环境；但是，它提供了一个可用于将 Superalgos 部署到 AWS 的文档化设计。

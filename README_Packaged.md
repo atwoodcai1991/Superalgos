@@ -1,38 +1,38 @@
-# Packaged Application Installation
+# 打包应用程序安装
 
-This is by far the easiest way to get started with Superalgos! 
+这是开始使用 Superalgos 最简单的方式！
 
-These packages contain the source code for the Superalgos platform wrapped together in one convenient file.  To find these files you can go to Superalgos' [releases page](https://github.com/Superalgos/Superalgos/releases). The releases are organized into two main categories.  First are the stable releases that come out roughly once a month and are the most tested and bug-free.  Second, are the nightly development snapshots that offer the most up-to-date code, but have not undergone the same rigorous testing. 
+这些包将 Superalgos 平台的源代码打包在一个方便的文件中。要找到这些文件，您可以访问 Superalgos 的[发布页面](https://github.com/Superalgos/Superalgos/releases)。发布分为两个主要类别。首先是大约每月发布一次的稳定版本，这些版本经过最多的测试，几乎没有 bug。其次是每晚的开发快照，提供最新的代码，但没有经过相同的严格测试。
 
-> :white_check_mark: **NOTE**: If you are just getting started, it is recommended to begin with installing the most recent stable release before trying out one of the development snapshots.
+> :white_check_mark: **注意**：如果您刚刚开始，建议先安装最新的稳定版本，然后再尝试开发快照。
 
-Once you have chosen which type of release you would like to install, you can then find the proper package for your operating system. Each operating system has its own packaged application to work natively within your operating system.  The following list highlights the currently available packages:  
+一旦您选择了要安装的版本类型，您就可以找到适合您操作系统的包。每个操作系统都有自己的打包应用程序，可以在您的操作系统中原生工作。以下列表突出显示了当前可用的包：
 
-> :white_check_mark: **IMPORTANT:** These installers are not code-signed (this costs money and Superalgos is completely free for everyone). Therefore, the antivirus will probably flag the file as not secure. You can force the installation to allow the packages to run. A more detailed explanation of this can be found in this [medium article](https://medium.com/superalgos/superalgos-packaged-application-release-8befd2895102). If this makes you uncomfortable, you may look into some of the other installation methods that do not suffer from this limitation.
+> :white_check_mark: **重要提示：** 这些安装程序没有代码签名（这需要花钱，而 Superalgos 对所有人都是完全免费的）。因此，防病毒软件可能会将文件标记为不安全。您可以强制安装以允许包运行。在这篇[媒体文章](https://medium.com/superalgos/superalgos-packaged-application-release-8befd2895102)中可以找到更详细的解释。如果这让您感到不舒服，您可以研究其他不受此限制的安装方法。
 
-> :white_check_mark: **NOTE ABOUT ASCENDEX:** An issue with AscendEX API may prevent the Welcome to Superalgos tutorial to run as expected. We suggest you use the fallback/default workspace in the meantime. The issue was reported to the exchange and is currently being investigated. 
+> :white_check_mark: **关于 ASCENDEX 的注意事项：** AscendEX API 的一个问题可能会阻止"欢迎使用 Superalgos"教程按预期运行。我们建议您暂时使用回退/默认工作区。该问题已报告给交易所，目前正在调查中。
 
 
-## Windows Portable Application
+## Windows 便携式应用程序
 
-This package requires zero installation! Simply download the package `Superalgos-win-{version}.exe` and you’re good to go. 
+这个包不需要安装！只需下载包 `Superalgos-win-{version}.exe` 就可以了。
 
-All the exchange data that downloaded and the workspaces you save are stored in your default documents folder (My Documents on Windows) under the `Superalgos_Data` folder. This way it's easier for you to backup data and not lose it between reinstallations.
+所有下载的交易所数据和您保存的工作区都存储在您的默认文档文件夹（Windows 上的 My Documents）下的 `Superalgos_Data` 文件夹中。这样您可以更容易地备份数据，并且在重新安装之间不会丢失数据。
 
-## Windows Setup Package
+## Windows 安装包
 
-Also on windows, there is a more traditional installer that installs the application and sets up the correct icons and shortcuts for you. This way you have a nice entry on the programs list. The downloaded data is stored in your Documents folder under the `Superalgos_Data` folder. This way it is easier for you to backup data and not lose it between reinstallations.
+在 Windows 上，还有一个更传统的安装程序，它会安装应用程序并为您设置正确的图标和快捷方式。这样您就可以在程序列表中有一个漂亮的条目。下载的数据存储在您的文档文件夹下的 `Superalgos_Data` 文件夹中。这样您可以更容易地备份数据，并且在重新安装之间不会丢失数据。
 
-## macOS Image
+## macOS 镜像
 
-Users of macOS have the option of downloading a DMG package. Installation is as simple as downloading the DMG file, copying it into your Applications folder, and running `xattr -rd com.apple.quarantine Superalgos.app` from the Terminal (Intel/M1) or allow the app in `System Preferences > Security & Privacy > General > Open Anyway` (Intel only)!
+macOS 用户可以选择下载 DMG 包。安装非常简单，只需下载 DMG 文件，将其复制到您的应用程序文件夹，并从终端运行 `xattr -rd com.apple.quarantine Superalgos.app`（Intel/M1）或在 `System Preferences > Security & Privacy > General > Open Anyway`（仅限 Intel）中允许应用程序！
 
-Currently, there are two types of DMG packages. The x64 variant (for Intel-based Mac only), as well as the ARM64 variant for the newer Apple Silicon (M1) based machines. All data is stored in the user's Documents folder under the `Superalgos_Data` folder. This way it is easier for you to backup data and not lose it between reinstallations.
+目前有两种类型的 DMG 包。x64 变体（仅适用于基于 Intel 的 Mac），以及适用于较新的基于 Apple Silicon（M1）的机器的 ARM64 变体。所有数据都存储在用户的文档文件夹下的 `Superalgos_Data` 文件夹中。这样您可以更容易地备份数据，并且在重新安装之间不会丢失数据。
 
-For a more detailed walk-through of the ins and outs of Superalgos packaged installations see this [medium article](https://medium.com/superalgos/superalgos-packaged-application-release-8befd2895102).
+有关 Superalgos 打包安装的来龙去脉的更详细说明，请参阅这篇[媒体文章](https://medium.com/superalgos/superalgos-packaged-application-release-8befd2895102)。
 
-## Pros and Cons of Packaged Installations
+## 打包安装的优缺点
 
-The packaged applications are by far the easiest way to install the Superalgos Platform. All of the day-to-day functionality of the platform is readily available, as well as the ability to create and submit a User Profile to the Governance system! 
+打包应用程序是安装 Superalgos 平台最简单的方式。平台的所有日常功能都可以随时使用，还可以向治理系统创建和提交用户配置文件！
 
-The main drawback of this type of installation comes with limitations on the ability to add contributions. Submitting a review, editing and translating the docs, or any kind of code contribution is not possible from a packaged installation.
+这种类型安装的主要缺点是在添加贡献方面有限制。从打包安装中无法提交审查、编辑和翻译文档，或进行任何类型的代码贡献。

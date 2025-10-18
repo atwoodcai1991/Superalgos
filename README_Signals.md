@@ -1,122 +1,117 @@
-# SUPERALGOS OUTGOING AND INCOMING SIGNALS
-
+# SUPERALGOS 发出和接收信号
 
 ![image](https://user-images.githubusercontent.com/93773753/184357506-230ef79a-cf45-40f9-a1f8-3b83ace321e1.png)
 
 
-Table of Content:
+目录：
 
-- Getting Ready
-- Set up your [User Profile](#set-up-your-user-profile)
-- Set up Superalgos [P2P Environment](#note)
-- Set up a Workspace for [SENDING](#outgoing-signals) Signals
-- Set up a Workspace for [RECEIVING](#incoming-signals) Signals
-- [Troubleshoots](#troubleshooting-errors)
+- 准备工作
+- 设置您的[用户配置文件](#set-up-your-user-profile)
+- 设置 Superalgos [P2P 环境](#note)
+- 设置用于[发送](#outgoing-signals)信号的工作区
+- 设置用于[接收](#incoming-signals)信号的工作区
+- [故障排除](#troubleshooting-errors)
 
 ---
 
-## GETTING READY
+## 准备工作
 
-This Readme covers the set up of Superalgos in order to be able to send or receive *signals* from the Superalgos P2P Network.
+本 Readme 介绍了 Superalgos 的设置，以便能够从 Superalgos P2P 网络发送或接收*信号*。
 
-It's supposed that you're familiar with Superalgos. But if you don't feel ready about it, follow the instructions in the main README file for developers and contributors. 
+假设您已经熟悉 Superalgos。但如果您对此还不太了解，请按照主 README 文件中针对开发者和贡献者的说明进行操作。
 
-You can get help from videos about installation https://youtu.be/Q4HVdfNdHbk or how to make a User Profile https://youtu.be/Sa5B-bwg81A.
+您可以从关于安装的视频 https://youtu.be/Q4HVdfNdHbk 或如何创建用户配置文件的视频 https://youtu.be/Sa5B-bwg81A 获取帮助。
 
-Whether you want to be a *Sender* or a *Receiver* there are few concepts to keep in mind:
+无论您想成为*发送者*还是*接收者*，都需要记住几个概念：
 
-- The **User Profile** that becames essential to be able to identify users in the P2P network (i.e. A Sender can decide to send signals only to specific users. And a Receiver can be sure that signals are sent from a specific user and nobody else)
+- **用户配置文件**对于在 P2P 网络中识别用户来说是必不可少的（例如，发送者可以决定只向特定用户发送信号。接收者可以确保信号是由特定用户发送的，而不是其他人）
 
-- The **P2P Network** that is mandatory for *Senders* but NOT for *Receivers*!
+- **P2P 网络**对于*发送者*是必需的，但对于*接收者*不是！
 
-- A running **SERVER** that is mandatory for *Senders* but NOT for *Receivers*!
+- 运行中的**服务器**对于*发送者*是必需的，但对于*接收者*不是！
 
 
-
-## SET UP YOUR USER PROFILE
+## 设置您的用户配置文件
 
 ![image](https://user-images.githubusercontent.com/38046064/183973288-81b2ccd3-f36e-41b2-92e3-6a0f3c683d9e.png)
 
 
-The User Profile setup of *Senders* is only slightly different from a Receiver. 
+*发送者*的用户配置文件设置与接收者的设置略有不同。
 
-#### FOR RECEIVERS
+#### 对于接收者
 
-Set up your User Profile adding these nodes:
+设置您的用户配置文件，添加这些节点：
 
 - User Apps > Server Apps > Task Server
 - User Apps > Server Apps > Social Trading Server
 - User Bots > Social Trading Bots > Social Trading Bot > Available Signals
 
 
+#### 对于发送者
 
-#### FOR SENDERS 
-
-All the above plus:
+除了上述所有内容外，还需要：
 
 - User Bots > Social Trading Bots > Social Trading Bot > Available Signals > Trading System Signals > Trading Strategy Signals
 - User Bots > Social Trading Bots > Social Trading Bot > Available Storage
 - User Storage > Github Storage > Github Storage Container
 
-Under the P2P Network Node in your user profile:
-- Add Network Services > Trading Signals
-- Reference P2P Network Reference to the network of choice (mainnet or testnet for public signals or your own permissioned P2P network)
+在您的用户配置文件中的 P2P Network 节点下：
+- 添加 Network Services > Trading Signals
+- 将 P2P Network Reference 引用到所选网络（用于公共信号的主网或测试网，或您自己的许可 P2P 网络）
 
-N.B. Under the Social Trading Bot node in your profile, you must:
-- Reference Available Storage Reference to the Github Storage Container of choice
-- Edit/check Trading Strategy Signals. Here you setup which signals you want to send. More details are found under the section "[OUTGOING SIGNALS](#outgoing-signals)"
+注意：在您配置文件中的 Social Trading Bot 节点下，您必须：
+- 将 Available Storage Reference 引用到所选的 Github Storage Container
+- 编辑/检查 Trading Strategy Signals。在这里您设置要发送哪些信号。更多详细信息可以在"[发出信号](#outgoing-signals)"部分找到
 
 
 ### Github Storage Container
 
-In order to be able to send signals, *Senders* must have a Storage Container. In this current development Superalgos makes use of Github repositories that will host the files, don't worry they are encrypted :)
+为了能够发送信号，*发送者*必须有一个存储容器。在当前开发中，Superalgos 使用 Github 仓库来托管文件，不用担心它们是加密的 :)
 
-Under the Github Storage Container:
-- Edit codeName to a unique identifier
-- Edit githubUserName to your github user account
-- Edit repositoryName to your github repository where you'll save the trading signals
+在 Github Storage Container 下：
+- 将 codeName 编辑为唯一标识符
+- 将 githubUserName 编辑为您的 github 用户账户
+- 将 repositoryName 编辑为您将保存交易信号的 github 仓库
 
-You must also add a JSON-file to your Superalgos folder, under Superalgos/My-Secrets create a file called "ApisSecrets.json", enter the following details in the following format.
+您还必须在 Superalgos 文件夹下的 Superalgos/My-Secrets 中添加一个 JSON 文件，创建一个名为 "ApisSecrets.json" 的文件，按以下格式输入以下详细信息。
 
 ```js
 {
-	"secrets": [
-		{
-			"nodeCodeName": "codeName-that-you-have-chosen-in-github-storage-container",
-			"apiToken": "your-api-token-from-github"
-		},
-		{
-			"nodeCodeName": "codeName-that-you-have-chosen-in-github-storage-container-number2",
-			"apiToken": "your-api-token-from-github"
-		}
-		]
+    "secrets": [
+        {
+            "nodeCodeName": "你在github-storage-container中选择的代码名称",
+            "apiToken": "你的github-api-令牌"
+        },
+        {
+            "nodeCodeName": "你在github-storage-container中选择的代码名称-2",
+            "apiToken": "你的github-api-令牌"
+        }
+        ]
 }
 ```
 
 
+### 签名账户
 
-### Signing Account 
+完成对用户配置文件的更改后，您必须对其进行签名。这是为了确保您就是您，而不是其他人。这是通过配置文件构造器（Governance 项目的一部分）完成的。
 
-After you are done with your changes to your user profile, you must sign them. This is to ensure that you are you and noone else. This is done with the Profile Constructor (part of the Governance project). 
-
-- Reference your User Profile to the profile constructor
+- 将您的用户配置文件引用到配置文件构造器
 - Profile contructor > Installing signing account
 - User Profile > Save Plugin
-- **PR your updated profile**
+- **PR 您更新的配置文件**
 
 ![image](https://user-images.githubusercontent.com/93773753/184140606-b94435cd-96ec-4ab5-8d22-ed989cab85ef.png)
 
-Remember to save your User Profile plugin, contribute it and check that it was merged at the Governance repository.
+记得保存您的用户配置文件插件，贡献它并检查它是否已合并到 Governance 仓库。
 
-**IMPORTANT**: It takes a few minutes for your profile to be auto-merged into the Governance repository and another 5 minutes to be picked up by the running Network Node. After changes to your profile, wait for around 10 minutes before expecting it to be able to connect to the Superalgos Network node.
+**重要提示**：您的配置文件被自动合并到 Governance 仓库需要几分钟时间，运行的网络节点再次获取它需要另外 5 分钟。更改配置文件后，等待大约 10 分钟，然后才能期望它能够连接到 Superalgos 网络节点。
 
 
+## SUPERALGOS P2P 环境
 
-## SUPERALGOS P2P ENVIRONMENT
+无论您选择通过哪个网络发送信号，或者即使您只想接收信号，您都必须确保在 Environment.js 文件中，将要使用的 P2P 网络必须与用户配置文件 P2P 网络配置同步。
 
-Whatever network you choose to send signals over, or even if you just want to receive signals, you have to make sure that in the Environment.js files the P2P Network that will be used must be in sync with the User Profile P2P Network config.
-
-For example the following was used for Permissioned P2P Network hosted by the user Blaa:
+例如，以下是用户 Blaa 托管的许可 P2P 网络的使用示例：
 
 ```js
 SOCIALTRADING_TARGET_NETWORK_TYPE: 'Permissioned P2P Network',
@@ -125,80 +120,78 @@ TASK_SERVER_TARGET_NETWORK_TYPE: 'Permissioned P2P Network',
 TASK_SERVER_TARGET_NETWORK_CODENAME: 'BlaaSignals',
 ```
 
-In this case the user Blaa (as a *sender*) must config his network with these lines of code, while a *receiver* would anyway modify the code in the same way in order to be able to connect to Blaa's Permissioned P2P Network.
+在这种情况下，用户 Blaa（作为*发送者*）必须用这些代码行配置他的网络，而*接收者*也会以相同的方式修改代码，以便能够连接到 Blaa 的许可 P2P 网络。
 
 
-**Using Tesnet will at the moment result in interference with the Machine Learning Project, as they are using Testnet. Should not happen, but seems to be a bug there.**
+**目前使用 Testnet 会导致与机器学习项目的干扰，因为他们正在使用 Testnet。这不应该发生，但似乎是一个 bug。**
 
 
-	
-**NOTE:** There needs to be network nodes running for the choosen network, if permissioned p2p you need to run your own node. 
+**注意：** 对于选择的网络需要运行网络节点，如果是许可的 p2p，您需要运行自己的节点。
 
-To run a node simply run the following command, which will run your default network node (default is set to number one), 
+要运行节点，只需运行以下命令，这将运行您的默认网络节点（默认设置为编号一），
 ```js
 node network
 ```
-If you wish to run any other you can use the following command, and changing the number to the corresponding node number from your user profile.
+如果您想运行任何其他节点，可以使用以下命令，并将数字更改为您的用户配置文件中对应的节点编号。
 ```js
 node network-node-2
 ```
 
-	
----
-## OUTGOING SIGNALS
 
-To be able to send signals using the built in features of Superalgos, you must add your User Profile with specific nodes to the Workspace with the Trading System you want to use. At minimal your workspace should looks like the screenshot below with your User Profiles.
+---
+## 发出信号
+
+要能够使用 Superalgos 的内置功能发送信号，您必须将带有特定节点的用户配置文件添加到要使用的交易系统的工作区。您的工作区至少应该如下面的截图所示，包含您的用户配置文件。
 
 ![image](https://user-images.githubusercontent.com/93773753/184310271-fd0d171f-a414-4518-af35-2bd806546cd6.png)
 
 
+### 交易系统
 
-### Trading System
+下一步是设置交易系统！
 
-Next step is to setup the trading system! 
-
-- Reference Trading System Outgoing Signal Reference to Trading System Signal (Under Socical Trading Bot > Available Signals)
-- Add outgoing signals for choice, you can add as many or as few that you wish
-	- If signals are based on formulas, you can if you wish add Signal Context Formula, to even further edit the value being sent. 
-- Reference all outgoing signals to the correct Signal under Trading Strategy Signals.
-	- For instance, a Market Buy Signal in the trading system goes to the Market Buy Signal under Trading Strategy Signals. 
+- 将 Trading System Outgoing Signal Reference 引用到 Trading System Signal（在 Social Trading Bot > Available Signals 下）
+- 添加您选择的发出信号，您可以添加任意多或少的信号
+    - 如果信号基于公式，如果您愿意，可以添加 Signal Context Formula，以进一步编辑要发送的值。
+- 将所有发出信号引用到 Trading Strategy Signals 下的正确信号。
+    - 例如，交易系统中的市场买入信号转到 Trading Strategy Signals 下的市场买入信号。
 
 ![image](https://user-images.githubusercontent.com/93773753/184138630-d169a22a-102d-40fb-ba62-81f2691f0a17.png)
 
 
-### Trading Task Node
+### 交易任务节点
 
-Almost there, you need to add a couple of nodes before you run your trading task (either Testing Trading Tasks or Production Trading Tasks).
+快完成了，在运行交易任务（测试交易任务或生产交易任务）之前，您需要添加几个节点。
 
-- Add Task Server Reference on Task
-	- Reference Task Server Reference to the a free Task Server in the User Profile 
-- Add Social Trading Bot Reference to Trading Bot Instance
-	- Reference Social Trading Bot Reference to the correct Social Trading Bot in User Profile (the one that will send your signals)
+- 在任务上添加 Task Server Reference
+    - 将 Task Server Reference 引用到用户配置文件中的空闲 Task Server
+- 将 Social Trading Bot Reference 添加到 Trading Bot Instance
+    - 将 Social Trading Bot Reference 引用到用户配置文件中的正确 Social Trading Bot（将发送您的信号的那个）
 
 ![image](https://user-images.githubusercontent.com/93773753/184290130-ecdd07a8-d894-46ee-9252-56a8b05b99a2.png)
 
 ---
 
-# INCOMING SINGALS 
-Set up a Workspace for *receiving* signals from a Superalgos User.
+# 接收信号
+设置工作区以从 Superalgos 用户*接收*信号。
 
-To be able to receive signals using the built in features of Superalgos, you must add the User Profile which sends the signgals to a Workspace with the Trading System you want to use. At minimal your workspace should looks like the screenshot below with your User Profiles.
+要能够使用 Superalgos 的内置功能接收信号，您必须将发送信号的用户配置文件添加到要使用的交易系统的工作区。您的工作区至少应该如下面的截图所示，包含您的用户配置文件。
 
 ![image](https://user-images.githubusercontent.com/38046064/184152474-3231b3e1-1cc8-4bc6-bdca-354ae594ff9f.png)
 
 
-## User profile
-- Add User Apps > Server Apps > Task Server
-- Add User Bots > Social Trading Bots > Social Trading Bot > Available Signals > Incoming Signals
+## 用户配置文件
+- 添加 User Apps > Server Apps > Task Server
+- 添加 User Bots > Social Trading Bots > Social Trading Bot > Available Signals > Incoming Signals
 
-## Incoming Signals
+## 接收信号
 
-Here you add what signals you want to use in your trading system. 
-You reference them from the user profile that is sending the signals (under available signals > trading system signals > trading strategy signals)
+在这里您添加要在交易系统中使用的信号。
+您从发送信号的用户配置文件中引用它们（在 available signals > trading system signals > trading strategy signals 下）
 
 ![image](https://user-images.githubusercontent.com/93773753/184138327-1a3fa950-51d6-41ee-bc43-c2c72c75ecb9.png)
 
-Signals cannot be used as a conditions on it's own, to use signals as a true/false statement, enter the following as a conditions to the event: 
+信号本身不能用作条件，要将信号用作真/假语句，请在事件的条件中输入以下内容：
 
 ```js
 if (signals !== undefined && signals.length > 0) {
@@ -208,35 +201,34 @@ if (signals !== undefined && signals.length > 0) {
 }
 ```
 
-**Note**: You have to add the trading system signal, otherwise the candles won't sync. 
+**注意**：您必须添加交易系统信号，否则蜡烛图不会同步。
 ![image](https://user-images.githubusercontent.com/93773753/184138062-cb032cf4-f01b-4602-9c63-e81a0e7daec4.png)
 
-## Signing Account
+## 签名账户
 
-- Reference your User Profile to the profile constructor
+- 将您的用户配置文件引用到配置文件构造器
 - Profile contructor > Installing signing account
 - User Profile > Save Plugin
-- **PR your updated profile**
+- **PR 您更新的配置文件**
 
-Remember to save your User Profile plugin, contribute it and check that it was merged at the Governance repository.
+记得保存您的用户配置文件插件，贡献它并检查它是否已合并到 Governance 仓库。
 
 
-## Trading Task Node 
-To receive trading signals into the trading task you need to add a couple of nodes before you run your trading task (either Testing Trading Tasks or Production Trading Tasks).
+## 交易任务节点
+要将交易信号接收到交易任务中，您需要在运行交易任务（测试交易任务或生产交易任务）之前添加几个节点。
 
-- Add Task Server Reference on Task
-	- Reference Task Server Reference to the a free Task Server in the User Profile 
-- Add Social Trading Bot Reference to Trading Bot Instance
-	- Reference Social Trading Bot Reference to the correct Social Trading Bot in User Profile (the one that will send your signals)
+- 在任务上添加 Task Server Reference
+    - 将 Task Server Reference 引用到用户配置文件中的空闲 Task Server
+- 将 Social Trading Bot Reference 添加到 Trading Bot Instance
+    - 将 Social Trading Bot Reference 引用到用户配置文件中的正确 Social Trading Bot（将发送您的信号的那个）
 
 ![image](https://user-images.githubusercontent.com/93773753/184290323-d6908658-c318-4e29-b692-f4a08b7078fb.png)
 
 ---
 
-# TROUBLESHOOTING ERRORS
+# 故障排除错误
 
-### Network Client Identity
+### 网络客户端身份
 
-"Fatal Error. Can not run this task. The Network Client Identity does not match any node at User Profiles Plugins."
-This error occurs when the signing account does not match the Governance plugin repository's account. To ensure they are the same, import your user profile on the workspace using the "Add specified User Profile" command under Plugins -> Plugin Project -> Plugin User Profiles. Add the correct nodes, references and signing account to the plugin as detailed in App Setup. Save the plugin and push the changes to the Governance repository and wait 10 minutes for it to merge and be picked up by the Forecast Server.
-
+"致命错误。无法运行此任务。网络客户端身份与用户配置文件插件中的任何节点都不匹配。"
+当签名账户与 Governance 插件仓库的账户不匹配时会发生此错误。要确保它们相同，请使用 Plugins -> Plugin Project -> Plugin User Profiles 下的"Add specified User Profile"命令在工作区中导入您的用户配置文件。按照 App Setup 中详述的内容向插件添加正确的节点、引用和签名账户。保存插件并将更改推送到 Governance 仓库，等待 10 分钟让它合并并被预测服务器获取。
